@@ -100,7 +100,8 @@ REQUIRED_PACKAGES = [
     'crcmod>=1.7,<2.0',
     'dill==0.2.6',
     'grpcio>=1.0,<2',
-    'hdfs>=2.1.0,<3.0.0',
+    # TODO: uncomment when dataflow vpc can access pip
+    # 'hdfs>=2.1.0,<3.0.0',
     'httplib2>=0.8,<0.10',
     'mock>=1.0.1,<3.0.0',
     'oauth2client>=2.0.1,<5',

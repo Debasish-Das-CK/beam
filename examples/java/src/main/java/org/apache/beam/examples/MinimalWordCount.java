@@ -63,8 +63,8 @@ public class MinimalWordCount {
     // options for our pipeline, such as the runner you wish to use. This example
     // will run with the DirectRunner by default, based on the class path configured
     // in its dependencies.
-    PipelineOptions options = PipelineOptionsFactory.create();
-
+    PipelineOptions options = PipelineOptionsFactory.fromArgs(args).create();
+    
     // In order to run your pipeline, you need to make following runner specific changes:
     //
     // CHANGE 1/3: Select a Beam runner, such as BlockingDataflowRunner
@@ -112,7 +112,7 @@ public class MinimalWordCount {
         // formatted strings) to a series of text files.
         //
         // By default, it will write to a set of files with names like wordcounts-00001-of-00005
-        .apply(TextIO.write().to("wordcounts"));
+        .apply(TextIO.write().to("gs://anurag-phadke-dataflow-test/dataflow-test/"));
 
     p.run().waitUntilFinish();
   }
